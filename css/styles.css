@@ -474,19 +474,19 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 /* border styles */
 
 .border-top {
-  border-top: 1.5px solid var();
+  border-top: 1.25px solid var(--text-primary-color);
 }
 
 .border-bottom {
-  border-bottom: 1.5px solid var();
+  border-bottom: 1.25px solid var(--text-primary-color);
 }
 
 .border-right {
-  border-right: 1.5px solid var();
+  border-right: 1.25px solid var(--text-primary-color);
 }
 
 .border-left {
-  border-left: 1.5px solid var();
+  border-left: 1.25px solid var(--text-primary-color);
 }
 
 .rounded-circle {
@@ -508,8 +508,33 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 
 @font-face {
   font-family: 'content-text';
-  src: url(/assets/fonts/Merriweather/static/Merriweather_24pt_SemiCondensed-Regular.ttf);
+  src: url(/assets/fonts/Raleway/static/Raleway-Regular.ttf);
 }
+
+/* utility text sizes  */
+
+.text-why {
+  color: var(--primary-logo-color);
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: var();
+}
+
+.text-medium {
+  font-size: 1.45rem;
+}
+
+.text-large {
+  font-size: 1.75rem;
+}
+
+.text-extra-large {
+  font-size: 1.9rem;
+}
+
 
 /* font weight classes */
 
@@ -530,13 +555,14 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 :root {
 
   --primary-logo-color: hsl(359, 100%, 62%);
+  --primary-logo-color-light: hsla(359, 100%, 62%, 0.15);
   --primary-color: hsl();
   --primary-color-light: hsl();
   --primary-color-extra-light: hsl();
   --secondary-color: hsl();
   --secondary-color-light: hsl();
   --secondary-color-extra-light: hsl();
-  --text-primary-color: hsl();
+  --text-primary-color: hsl(204, 19%, 26%);
   --text-primary-color-light: hsl();
   --text-secondary-color: hsl();
   --text-secondary-color-light: hsl();
@@ -550,7 +576,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
   --anchor-primary-color-light: hsl();
   --anchor-secondary-color: hsl();
   --anchor-secondary-color-light: hsl();
-  --anchor-primary-color-hover: hsl();
+  --anchor-primary-color-hover: hsl(359, 100%, 62%);
   --anchor-secondary-color-hover: hsl();
 
 }
@@ -599,13 +625,6 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
   font-size: 0.875rem;
 }
 
-/* footer text */
-
-.text-small {
-  font-size: 0.875rem;
-  line-height: 1rem;
-  color: var();
-}
 
 .container {  
   width: 95%;
@@ -625,7 +644,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 
 .tagline {
   font-family: 'font-heading';
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 400;
   padding: 0;
   margin: 0;
@@ -646,10 +665,13 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 /* basic styles for selectors */
 
 body {
+  height: 100vh;
   font-family: content-text;
   font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text-primary-color);
   line-height: 1.6;
-  background-color: var(--bg-primary-color);
+  background-color: var();
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.151)), url();
   background-repeat: repeat;
   background-size: auto, cover; */
@@ -657,7 +679,8 @@ body {
 
 header  {
   flex-direction: column;
-  background-color: var();    
+  background-color: var();
+  border-bottom: 1.25px solid var(--text-primary-color);    
 }
 
 header > div {
@@ -679,12 +702,12 @@ header nav ul {
 
 a {
   text-decoration: none;
-  color: var();
-  font-weight: 400;  
+  color: var(--text-primary-color);
+  font-weight: 500;  
 }
 
 a:hover {
-  color: var();
+  color: var(--anchor-primary-color-hover);
 }
 
 header nav ul li a {
@@ -693,12 +716,27 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  color: var();
+  color: var(--anchor-primary-color-hover);
 }
 
+/* main {
+  position: relative;
+  background-image: url(/assets/images/AI_overlay.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* background: rgba(255, 255, 255, 0.4) */
+} */
+
 footer {
-  background-color: var(); 
-  border: 1px solid red; 
+  background-color: var();       
 }
 
 footer nav ul {
@@ -710,12 +748,12 @@ footer nav ul {
 }
 
 footer nav ul li a {
-  color: inherit;
+  color: var(--text-primary-color);
   transition: color 0.3s ease;
 }
 
 footer nav ul li a:hover {
-  color: var(); 
+  color: var(--anchor-primary-color-hover); 
 }   
 
 footer p {
