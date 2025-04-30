@@ -438,24 +438,139 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .py-lg { padding-top: 2rem; padding-bottom: 2rem; }
 .px-lg { padding-left: 2rem; padding-right: 2rem; }
 
+/* align text */
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+/* flex align */
+
+.d-flex { display: flex; }
+.flex-column { flex-direction: column; }
+.justify-content-center { justify-content: center; }
+.align-items-center { align-items: center; }
+.space-between { justify-content: space-between; }
+.space-around { justify-content: space-around;}
+.gap-x-sm { gap: 0.5rem; }
+.gap-sm { gap: 0.75rem; }
+.gap-md { gap: 1rem; }
+
+/* block align */
+
+.d-block {
+  display: block;
+}
+
+/* remove default bullet */
+
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* border styles */
+
+.border-top {
+  border-top: 1.5px solid var();
+}
+
+.border-bottom {
+  border-bottom: 1.5px solid var();
+}
+
+.border-right {
+  border-right: 1.5px solid var();
+}
+
+.border-left {
+  border-left: 1.5px solid var();
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
 /* fonts for headings and content */
 
 @font-face {
+  font-family: 'font-logo';
+  src: url(/assets/fonts/Open_Sans/static/OpenSans_Condensed-Bold.ttf);
+}
+
+
+@font-face {
   font-family: 'font-heading';
-  src: url(../assets/fonts/Open_Sans/static/OpenSans-Regular.ttf);
+  src: url(/assets/fonts/Open_Sans/static/OpenSans_Condensed-Regular.ttf);
 }
 
 @font-face {
   font-family: 'content-text';
-  src: url(../assets/fonts/Merriweather/static/Merriweather_120pt-Regular.ttf);
+  src: url(/assets/fonts/Merriweather/static/Merriweather_24pt_SemiCondensed-Regular.ttf);
+}
+
+/* font weight classes */
+
+.font-lighter {
+  font-weight: lighter;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-bolder {
+  font-weight: bolder;
+}
+
+/* site color scheme */
+
+:root {
+
+  --primary-logo-color: hsl(359, 100%, 62%);
+  --primary-color: hsl();
+  --primary-color-light: hsl();
+  --primary-color-extra-light: hsl();
+  --secondary-color: hsl();
+  --secondary-color-light: hsl();
+  --secondary-color-extra-light: hsl();
+  --text-primary-color: hsl();
+  --text-primary-color-light: hsl();
+  --text-secondary-color: hsl();
+  --text-secondary-color-light: hsl();
+  --bg-primary-color: hsl();
+  --bg-primary-color-light: hsl();
+  --bg-primary-color-extra: hsl();
+  --bg-secondary-color: hsl();
+  --bg-secondary-color-light: hsl();
+  --bg-secondary-color-extra-light: hsl();
+  --anchor-primary-color: hsl();
+  --anchor-primary-color-light: hsl();
+  --anchor-secondary-color: hsl();
+  --anchor-secondary-color-light: hsl();
+  --anchor-primary-color-hover: hsl();
+  --anchor-secondary-color-hover: hsl();
+
 }
 
 /* utility classes  */
 
+/* logo style and color */
+
+.logo p {
+  font-family: 'font-logo';
+  font-size: 2rem;
+  color: var(--primary-logo-color);
+  
+}
+
 /* removing bullet points for unordered lists */
 
-.list-unstyled {
+.list-unstyled li a {
   list-style: none;
+  text-decoration: none;
 }
 
 /* title classes for headings */
@@ -465,7 +580,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .title-three,
 .title-four {
   font-family: 'font-heading';
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .title-one {
@@ -477,12 +592,132 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 }
 
 .title-three {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .title-four {
-  font-size: 0.875;
+  font-size: 0.875rem;
 }
 
+/* footer text */
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: var();
+}
+
+.container {  
+  width: 95%;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-full {
+  flex-basis: 100%;
+  max-width: 100%; 
+}
+
+.tagline {
+  font-family: 'font-heading';
+  font-size: 1.25rem;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+/* footer div alignment left and right */
+
+.align-block-left {
+  width: 50%;
+  float: left;
+}
+
+.align-block-right {
+  width: 50%;
+  float: right;
+}
 
 /* basic styles for selectors */
+
+body {
+  font-family: content-text;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  background-color: var(--bg-primary-color);
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.151)), url();
+  background-repeat: repeat;
+  background-size: auto, cover; */
+}
+
+header  {
+  flex-direction: column;
+  background-color: var();    
+}
+
+header > div {
+  text-align: center;
+}
+
+header nav {
+  width: 100%;
+}
+
+header nav ul {
+  list-style: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0; 
+  gap: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var();
+  font-weight: 400;  
+}
+
+a:hover {
+  color: var();
+}
+
+header nav ul li a {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: var();
+}
+
+footer {
+  background-color: var(); 
+  border: 1px solid red; 
+}
+
+footer nav ul {
+  list-style: none;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+footer nav ul li a {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+  color: var(); 
+}   
+
+footer p {
+  font-size: 1rem;
+}
