@@ -456,6 +456,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .gap-x-sm { gap: 0.5rem; }
 .gap-sm { gap: 0.75rem; }
 .gap-md { gap: 1rem; }
+.gap-lg { gap: 2rem;}
 
 /* block align */
 
@@ -497,7 +498,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 
 @font-face {
   font-family: 'font-logo';
-  src: url(/assets/fonts/Open_Sans/static/OpenSans_Condensed-Bold.ttf);
+  src: url(/assets/fonts/Raleway/static/Raleway-BoldItalic.ttf);
 }
 
 
@@ -511,12 +512,19 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
   src: url(/assets/fonts/Raleway/static/Raleway-Regular.ttf);
 }
 
-/* utility text sizes  */
+/* utility visual targets  */
 
 .text-why {
   color: var(--primary-logo-color);
 }
 
+
+
+.text-muted {
+  color: #ff3d40b2;
+}
+
+/* utility text sizes strategic placement */
 .text-small {
   font-size: 0.875rem;
   line-height: 1rem;
@@ -554,30 +562,29 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 
 :root {
 
-  --primary-logo-color: hsl(359, 100%, 62%);
-  --primary-logo-color-light: hsla(359, 100%, 62%, 0.15);
-  --primary-color: hsl();
-  --primary-color-light: hsl();
-  --primary-color-extra-light: hsl();
-  --secondary-color: hsl();
-  --secondary-color-light: hsl();
-  --secondary-color-extra-light: hsl();
-  --text-primary-color: hsl(204, 19%, 26%);
-  --text-primary-color-light: hsl();
-  --text-secondary-color: hsl();
-  --text-secondary-color-light: hsl();
-  --bg-primary-color: hsl();
-  --bg-primary-color-light: hsl();
-  --bg-primary-color-extra: hsl();
-  --bg-secondary-color: hsl();
-  --bg-secondary-color-light: hsl();
-  --bg-secondary-color-extra-light: hsl();
-  --anchor-primary-color: hsl();
-  --anchor-primary-color-light: hsl();
-  --anchor-secondary-color: hsl();
-  --anchor-secondary-color-light: hsl();
-  --anchor-primary-color-hover: hsl(359, 100%, 62%);
-  --anchor-secondary-color-hover: hsl();
+  --primary-logo-color: #ff3d40;
+  --primary-color: ;
+  --primary-color-light: ;
+  --primary-color-extra-light: ;
+  --secondary-color: ;
+  --secondary-color-light: ;
+  --secondary-color-extra-light: ;
+  --text-primary-color: #36454f;
+  --text-primary-color-light: ;
+  --text-secondary-color: ;
+  --text-secondary-color-light: ;
+  --bg-primary-color: ;
+  --bg-primary-color-light: ;
+  --bg-primary-color-extra: ;
+  --bg-secondary-color: ;
+  --bg-secondary-color-light: ;
+  --bg-secondary-color-extra-light: ;
+  --anchor-primary-color: ;
+  --anchor-primary-color-light: ;
+  --anchor-secondary-color: ;
+  --anchor-secondary-color-light: ;
+  --anchor-primary-color-hover: #ff3d40;
+  --anchor-secondary-color-hover: ;
 
 }
 
@@ -585,11 +592,13 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 
 /* logo style and color */
 
-.logo p {
+.logo {
+  display: inline-block;
   font-family: 'font-logo';
-  font-size: 2rem;
+  font-size: 2.25rem;
+  padding: 1.25rem;
+  border: 1.5px solid #fff;
   color: var(--primary-logo-color);
-  
 }
 
 /* removing bullet points for unordered lists */
@@ -606,6 +615,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .title-three,
 .title-four {
   font-family: 'font-heading';
+  color: #191970;
   font-weight: 400;
 }
 
@@ -625,13 +635,14 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
   font-size: 0.875rem;
 }
 
+/* focused content highlighted */
 
 .container {  
-  width: 95%;
-  max-width: 90rem;
+  width: 100%;
+  max-width: auto;
   margin: 0 auto;
 }
-
+ 
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -642,24 +653,14 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
   max-width: 100%; 
 }
 
-.tagline {
+.title-two.tagline {
   font-family: 'font-heading';
-  font-size: 1.35rem;
+  font-size: 1.375rem;
+  font-style: italic;
+  color: #000;
   font-weight: 400;
   padding: 0;
   margin: 0;
-}
-
-/* footer div alignment left and right */
-
-.align-block-left {
-  width: 50%;
-  float: left;
-}
-
-.align-block-right {
-  width: 50%;
-  float: right;
 }
 
 /* basic styles for selectors */
@@ -668,20 +669,18 @@ body {
   height: 100vh;
   font-family: content-text;
   font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--text-primary-color);
+  font-weight: 550;
+  color: #35454F;
   line-height: 1.6;
-  background-color: var();
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.151)), url();
-  background-repeat: repeat;
-  background-size: auto, cover; */
+  background-color: #f0f0f0;
 }
 
 header  {
   flex-direction: column;
-  background-color: var();
-  border-bottom: 1.25px solid var(--text-primary-color);    
-}
+  background-color: #35454F; /* Start with a slightly darker charcoal grey - adjust as needed */
+  background-image: linear-gradient(to bottom, #35454f, #f0f0f0); /* Vertical gradient */
+}     
+
 
 header > div {
   text-align: center;
@@ -697,12 +696,10 @@ header nav ul {
   font-weight: 500;
   margin: 0;
   padding: 0; 
-  gap: 2rem;
 }
 
 a {
   text-decoration: none;
-  color: var(--text-primary-color);
   font-weight: 500;  
 }
 
@@ -711,7 +708,7 @@ a:hover {
 }
 
 header nav ul li a {
-  color: inherit;
+  color: #fff;
   transition: color 0.3s ease;
 }
 
@@ -719,43 +716,149 @@ header nav ul li a:hover {
   color: var(--anchor-primary-color-hover);
 }
 
-/* main {
-  position: relative;
-  background-image: url(/assets/images/AI_overlay.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 0;
+.button {
+  font-family: 'font-heading';
+  font-size: 1.275;
+  border: 1.375px solid #000;
+  color: #e6e6e6;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  padding: 16px;
 }
 
-main::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  /* background: rgba(255, 255, 255, 0.4) */
-} */
+.button.primary {
+  background-color: #35454F;
+}
+
+.primary:hover {
+  background-color: #ff3d40;
+  color: #f0f0f0;
+}
 
 footer {
-  background-color: var();       
+  color: #000;
+  background-color: #f0f0f0; /* Start with the lighter grey */
+  background-image: linear-gradient(to top, #35454F, #f0f0f0); /* Reversed vertical gradient */
+  padding-top: 1rem; /* Add some padding to the top of the footer if needed */       
 }
 
-footer nav ul {
-  list-style: none;
-  font-size: 1rem;
-  margin: 0;
+.footer-content {
+  flex-wrap: wrap;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer-content > section {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.footer-navigation h3, 
+.footer-description h3,
+.footer-legal h3, 
+.footer-connect h3 {
+  font-family: 'font-heading';
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.footer-navigation ul {
   padding: 0;
-  gap: 1rem;
+  margin: 0;
 }
 
-footer nav ul li a {
-  color: var(--text-primary-color);
-  transition: color 0.3s ease;
+.footer-navigation ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
-footer nav ul li a:hover {
-  color: var(--anchor-primary-color-hover); 
-}   
+.footer-navigation ul li a:hover {
+  color: var(--anchor-primary-color-hover);
+}
 
-footer p {
-  font-size: 1rem;
+.footer-description p,
+.footer-legal p,
+.footer-connect p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #35454F;
+}
+
+.footer-connect .button-small {
+  font-size: 0.9rem;
+  padding: 0.75rem 1.25rem;
+  color: #191970;
+  border: 1px solid #191970;
+  border-radius: 15px;
+}
+
+footer .bottom-center {
+  width: 100%;
+}
+
+.footer-connect .button-small:hover {
+  color: var(--anchor-primary-color-hover);
+}
+
+/* styles for the landing page index.html */
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.left-column {
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.image-placeholder {
+  margin-bottom: 1.5rem;
+}
+
+.brief-summary h3 {
+  font-family: 'font-heading';
+  color: #191970;
+  margin-bottom: 0.5rem;
+}
+
+.brief-summary p {
+  line-height: 1.6;
+}
+
+.right-column {
+  font-family: 'font-heading';
+  color: #191970;
+  margin-bottom: 0.75rem;
+}
+
+.right-column p {
+  line-height: 1.6;
+}
+
+
+@media (min-width: 768px) {
+  .footer-content > section {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-content > section {
+    width: calc(25% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
