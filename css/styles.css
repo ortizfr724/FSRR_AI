@@ -348,9 +348,13 @@ template {
   display: none;
 }
 
+/* to change the default box-sizing value from content-box */
+
 html {
   box-sizing: border-box;
 }
+
+/* page reset  */
 
 *, 
 *::before, 
@@ -358,9 +362,9 @@ html {
   box-sizing: inherit;
 }
 
-/* Basic utility classes */
+/* Basic alignment and spacing utility classes */
 
-/* extra small spacing */
+/* utility extra small spacing */
 
 m-xs { margin: 0.25rem; }
 mt-xs { margin-top: 0.25rem; }
@@ -378,7 +382,7 @@ pl-xs { padding-left: 0.25rem; }
 py-xs { padding-top: 0.25rem; padding-bottom: 0.25rem; }
 px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 
-/* small margin spacing */
+/* utility small margin spacing */
 
 .m-sm { margin: 0.5rem; }
 .mr-sm { margin-right: 0.5rem; }
@@ -388,7 +392,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .my-sm { margin-top: 0.5rem; margin-bottom: 0.5rem; }
 .mx-sm { margin-left: 0.5rem; margin-right: 0.5rem; }
 
-/* small pad spacing */
+/* utility small pad spacing */
 
 .p-sm { padding: 0.5rem; }
 .pr-sm { padding-right: 0.5rem; }
@@ -398,7 +402,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .py-sm { padding-top: 0.5rem; padding-bottom: 0.5rem; }
 .px-sm { padding-left: 0.5rem; padding-right: 0.5rem; }
 
-/* medium margin spacing */
+/* utility medium margin spacing */
 
 .m-md { margin: 1rem; }
 .mr-md { margin-right: 1rem; }
@@ -408,7 +412,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .my-md { margin-top: 1rem; margin-bottom: 1rem; }
 .mx-md { margin-left: 1rem; margin-right: 1rem; }
 
-/* medium pad spacing */
+/* utility medium pad spacing */
 
 .p-md { padding: 1rem; }
 .pr-md { padding-right: 1rem; }
@@ -418,7 +422,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .py-md { padding-top: 1rem; padding-bottom: 1rem; }
 .px-md { padding-left: 1rem; padding-right: 1rem; }
 
-/* large margin spacing */
+/* utility large margin spacing */
 
 .m-lg { margin: 2rem;}
 .mr-lg { margin-right: 2rem; }
@@ -428,7 +432,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .my-lg { margin-top: 2rem; margin-bottom: 2rem; }
 .mx-lg { padding-left: 2rem; margin-right: 2rem; }
 
-/* large pad spacing */
+/* utility large pad spacing */
 
 .p-lg { padding: 2rem; }
 .pr-lg { padding-right: 2rem; }
@@ -438,14 +442,14 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .py-lg { padding-top: 2rem; padding-bottom: 2rem; }
 .px-lg { padding-left: 2rem; padding-right: 2rem; }
 
-/* align text */
+/* utility text alignment */
 
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 .text-justify { text-align: justify; }
 
-/* flex align */
+/* utility alignment flex */
 
 .d-flex { display: flex; }
 .flex-column { flex-direction: column; }
@@ -458,13 +462,13 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .gap-md { gap: 1rem; }
 .gap-lg { gap: 2rem;}
 
-/* block align */
+/* utility alignment block */
 
 .d-block {
   display: block;
 }
 
-/* remove default bullet */
+/* utility remove default bullet */
 
 .list-unstyled {
   list-style: none;
@@ -472,7 +476,13 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
   margin: 0;
 }
 
-/* border styles */
+/* removing the anchor default under-line style */
+
+.list-unstyled li a {
+  text-decoration: none;
+}
+
+/* utility border styles */
 
 .border-top {
   border-top: 1.25px solid var(--text-primary-color);
@@ -492,7 +502,10 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 
 .rounded-circle {
   border-radius: 50%;
+  border: 1.6875px solid var(--color-accent);
 }
+
+/* utility classes for site-wide fonts and settings  */
 
 /* fonts for headings and content */
 
@@ -500,7 +513,6 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
   font-family: 'font-logo';
   src: url(/assets/fonts/Raleway/static/Raleway-BoldItalic.ttf);
 }
-
 
 @font-face {
   font-family: 'font-heading';
@@ -512,102 +524,6 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
   src: url(/assets/fonts/Raleway/static/Raleway-Regular.ttf);
 }
 
-/* utility visual targets  */
-
-.text-why {
-  color: var(--primary-logo-color);
-}
-
-
-
-.text-muted {
-  color: #ff3d40b2;
-}
-
-/* utility text sizes strategic placement */
-.text-small {
-  font-size: 0.875rem;
-  line-height: 1rem;
-  color: var();
-}
-
-.text-medium {
-  font-size: 1.45rem;
-}
-
-.text-large {
-  font-size: 1.75rem;
-}
-
-.text-extra-large {
-  font-size: 1.9rem;
-}
-
-
-/* font weight classes */
-
-.font-lighter {
-  font-weight: lighter;
-}
-
-.font-bold {
-  font-weight: bold;
-}
-
-.font-bolder {
-  font-weight: bolder;
-}
-
-/* site color scheme */
-
-:root {
-
-  --primary-logo-color: #ff3d40;
-  --primary-color: ;
-  --primary-color-light: ;
-  --primary-color-extra-light: ;
-  --secondary-color: ;
-  --secondary-color-light: ;
-  --secondary-color-extra-light: ;
-  --text-primary-color: #36454f;
-  --text-primary-color-light: ;
-  --text-secondary-color: ;
-  --text-secondary-color-light: ;
-  --bg-primary-color: ;
-  --bg-primary-color-light: ;
-  --bg-primary-color-extra: ;
-  --bg-secondary-color: ;
-  --bg-secondary-color-light: ;
-  --bg-secondary-color-extra-light: ;
-  --anchor-primary-color: ;
-  --anchor-primary-color-light: ;
-  --anchor-secondary-color: ;
-  --anchor-secondary-color-light: ;
-  --anchor-primary-color-hover: #ff3d40;
-  --anchor-secondary-color-hover: ;
-
-}
-
-/* utility classes  */
-
-/* logo style and color */
-
-.logo {
-  display: inline-block;
-  font-family: 'font-logo';
-  font-size: 2.25rem;
-  padding: 1.25rem;
-  border: 1.5px solid #fff;
-  color: var(--primary-logo-color);
-}
-
-/* removing bullet points for unordered lists */
-
-.list-unstyled li a {
-  list-style: none;
-  text-decoration: none;
-}
-
 /* title classes for headings */
 
 .title-one,
@@ -615,7 +531,7 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .title-three,
 .title-four {
   font-family: 'font-heading';
-  color: #191970;
+  color: var(--text-color-headings);
   font-weight: 400;
 }
 
@@ -634,6 +550,88 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 .title-four {
   font-size: 0.875rem;
 }
+
+/* utility visual targets  */
+
+.text-why {
+  color: var(--logo-color);
+}
+
+/* unimportant text that still needs to be seen */
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* utility text sizes strategic placement discuss further for line-height and variable color and size separation  */
+
+.text-small,
+.text-medium,
+.text-large,
+.text-extra-large {
+  font-weight: 500;
+  line-height: 1rem;
+  color: var(--text-color-prime-light);
+}
+
+.text-small {
+  font-size: 0.975rem;
+}
+
+.text-medium {
+  font-size: 1.575rem;
+}
+
+.text-large {
+  font-size: 1.75rem;
+  color: var(--color-accent);
+}
+
+.text-extra-large {
+  font-size: 1.975rem;
+}
+
+/* font weight classes */
+
+.font-lighter {
+  font-weight: lighter;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-bolder {
+  font-weight: bolder;
+}
+
+/* site color scheme */
+
+:root {
+  --bg-color-prime: #f0f0f0;      /* body: neutral background-color */
+  --text-color-prime: #35454f;    /* body: text color primary charcoal grey */
+  --text-color-prime-light: hsla(203, 20%, 26%, 0.802);  /* utility sized text small through extra-large light charcoal grey */
+  --text-color-second: #000;      /* footer: text midnight black */
+  --text-color-headings: #191970; /* site headings midnight blue */
+  --color-accent: #fff;   /* header links and logo border white */ 
+  --logo-color: #ff3d40;  /* site logo text watermelon red */
+  --text-muted: hsla(359, 100%, 62%, 0.198);  /* for unimportant text that sill needs to be seen light variation of watermelon red */
+}
+
+/* utility classes  */
+
+/* logo style and color */
+
+.logo {
+  display: inline-block;
+  font-family: 'font-logo';
+  font-weight: 800;
+  font-size: 2.25rem;
+  padding: 1.25rem;
+  color: var(--logo-color);
+}
+
+
 
 /* focused content highlighted */
 
@@ -655,9 +653,9 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 
 .title-two.tagline {
   font-family: 'font-heading';
-  font-size: 1.375rem;
+  font-size: 1.3875rem;
   font-style: italic;
-  color: #000;
+  color: var(--text-color-second);
   font-weight: 400;
   padding: 0;
   margin: 0;
@@ -670,15 +668,17 @@ body {
   font-family: content-text;
   font-size: 1.15rem;
   font-weight: 550;
-  color: #35454F;
+  color: var(--text-color-prime);
   line-height: 1.6;
-  background-color: #f0f0f0;
+  background-color: var(--bg-color-prime);
 }
+
+/* header styling and non-utility alignment and spacing */
 
 header  {
   flex-direction: column;
-  background-color: #35454F; /* Start with a slightly darker charcoal grey - adjust as needed */
-  background-image: linear-gradient(to bottom, #35454f, #f0f0f0); /* Vertical gradient */
+  background-color: var(--text-color-prime); /* Start with a slightly darker charcoal grey - adjust as needed */
+  background-image: linear-gradient(to bottom, var(--text-color-prime), var(--bg-color-prime)); /* Vertical gradient */
 }     
 
 
@@ -692,7 +692,7 @@ header nav {
 
 header nav ul {
   list-style: none;
-  font-size: 1.25rem;
+  font-size: 1.3875rem;
   font-weight: 500;
   margin: 0;
   padding: 0; 
@@ -700,45 +700,50 @@ header nav ul {
 
 a {
   text-decoration: none;
+  color: var(--color-accent);
   font-weight: 500;  
 }
 
 a:hover {
-  color: var(--anchor-primary-color-hover);
+  color: var(--logo-color);
 }
 
 header nav ul li a {
-  color: #fff;
+  color: var(--color-accent);
   transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-  color: var(--anchor-primary-color-hover);
+  color: var(--logo-color);
 }
+
+/* site-wide buttons and styles */
 
 .button {
   font-family: 'font-heading';
   font-size: 1.275;
-  border: 1.375px solid #000;
-  color: #e6e6e6;
+  border: 1.375px solid var(--text-color-second);
+  color: var(--bg-color-prime);
   border-radius: 20px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   padding: 16px;
 }
 
 .button.primary {
-  background-color: #35454F;
+  background-color: var(--text-color-prime);
 }
 
 .primary:hover {
-  background-color: #ff3d40;
-  color: #f0f0f0;
+  background-color: var(--logo-color);
+  color: var(--bg-color-prime);
 }
 
+/* footer styles for elements within this section and non-utility alignment and non-utility spacing  */
+
 footer {
-  color: #000;
-  background-color: #f0f0f0; /* Start with the lighter grey */
-  background-image: linear-gradient(to top, #35454F, #f0f0f0); /* Reversed vertical gradient */
+  color: var(--text-color-second);
+  background-color: var(--bg-color-prime); /* Start with the lighter grey */
+  background-image: linear-gradient(to top, var(--text-color-prime), var(--bg-color-prime)); /* Reversed vertical gradient */
   padding-top: 1rem; /* Add some padding to the top of the footer if needed */       
 }
 
@@ -760,7 +765,7 @@ footer {
   font-family: 'font-heading';
   font-size: 1.1rem;
   font-style: italic;
-  color: #000;
+  color: var(--text-color-second);
   margin-bottom: 0.5rem;
 }
 
@@ -770,14 +775,14 @@ footer {
 }
 
 .footer-navigation ul li a {
-  color: #000;
+  color: var(--color-accent);
   text-decoration: none;
   font-size: 0.9rem;
   line-height: 1.5;
 }
 
 .footer-navigation ul li a:hover {
-  color: var(--anchor-primary-color-hover);
+  color: var(--logo-color);
 }
 
 .footer-description p,
@@ -785,14 +790,14 @@ footer {
 .footer-connect p {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #35454F;
+  color: var(--text-color-prime);
 }
 
 .footer-connect .button-small {
   font-size: 0.9rem;
   padding: 0.75rem 1.25rem;
-  color: #191970;
-  border: 1px solid #191970;
+  color: var(--text-color-headings);
+  border: 1px solid var(--color-accent);
   border-radius: 15px;
 }
 
@@ -801,7 +806,8 @@ footer .bottom-center {
 }
 
 .footer-connect .button-small:hover {
-  color: var(--anchor-primary-color-hover);
+  color: var(--logo-color);
+  background-color: var(--color-accent);
 }
 
 /* styles for the landing page index.html */
@@ -825,7 +831,7 @@ footer .bottom-center {
 
 .brief-summary h3 {
   font-family: 'font-heading';
-  color: #191970;
+  color: var(--text-color-headings);
   margin-bottom: 0.5rem;
 }
 
@@ -835,7 +841,7 @@ footer .bottom-center {
 
 .right-column {
   font-family: 'font-heading';
-  color: #191970;
+  color: var(--text-color-headings);
   margin-bottom: 0.75rem;
 }
 
@@ -843,6 +849,11 @@ footer .bottom-center {
   line-height: 1.6;
 }
 
+.copyright-logo {
+  color: var(--logo-color);
+}
+
+/* responsive breakpoint small to large mobile devises */
 
 @media (min-width: 768px) {
   .footer-content > section {
@@ -850,11 +861,15 @@ footer .bottom-center {
   }
 }
 
+/* responsive breakpoint small laptops to PC  */
+
 @media (min-width: 992px) {
   .footer-content > section {
     width: calc(25% - 1rem);
   }
 }
+
+/* responsive breakpoint small to large mobile devices  */
 
 @media (max-width: 768px) {
   .main-grid {
