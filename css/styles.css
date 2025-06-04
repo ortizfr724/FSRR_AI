@@ -197,6 +197,7 @@ button,
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
+  appearance: button;
 }
 
 /**
@@ -289,6 +290,7 @@ textarea {
 
 [type="search"] {
   -webkit-appearance: textfield; /* 1 */
+  appearance: textfield;
   outline-offset: -2px; /* 2 */
 }
 
@@ -366,21 +368,21 @@ html {
 
 /* utility extra small spacing */
 
-m-xs { margin: 0.25rem; }
-mt-xs { margin-top: 0.25rem; }
-mr-xs { margin-right: 0.25rem; }
-mb-xs { margin-bottom: 0.25rem; }
-ml-xs { margin-left: 0.25rem; }
-my-xs { margin-top: 0.25rem; margin-bottom: 0.25rem; }
-mx-xs { margin-left: 0.25rem; margin-right: 0.25rem; }
+.m-xs { margin: 0.25rem; }
+.mt-xs { margin-top: 0.25rem; }
+.mr-xs { margin-right: 0.25rem; }
+.mb-xs { margin-bottom: 0.25rem; }
+.ml-xs { margin-left: 0.25rem; }
+.my-xs { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.mx-xs { margin-left: 0.25rem; margin-right: 0.25rem; }
 
-p-xs { padding: 0.25rem; }
-pt-xs { padding-top: 0.25rem; }
-pr-xs { padding-right: 0.25rem; }
-pb-xs { padding-bottom: 0.25rem; }
-pl-xs { padding-left: 0.25rem; }
-py-xs { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
+.p-xs { padding: 0.25rem; }
+.pt-xs { padding-top: 0.25rem; }
+.pr-xs { padding-right: 0.25rem; }
+.pb-xs { padding-bottom: 0.25rem; }
+.pl-xs { padding-left: 0.25rem; }
+.py-xs { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 
 /* utility small margin spacing */
 
@@ -468,6 +470,9 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
   display: block;
 }
 
+.d-inline-block {
+  display: inline-block;
+}
 /* utility remove default bullet */
 
 .list-unstyled {
@@ -553,7 +558,8 @@ px-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
 
 /* utility visual targets  */
 
-.text-why {
+.text-why,
+.ror {
   color: var(--logo-color);
 }
 
@@ -673,6 +679,45 @@ body {
   background-color: var(--bg-color-prime);
 }
 
+/* landing page hero section styling */
+
+.hero-section {
+  min-height: 80vh;
+  background-color: var(--bg-color-prime);
+  color: var(--text-color-prime);
+}
+
+.hero-content {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.hero-headline {
+  font-family: "font-logo";
+  font-size: 3.75rem;
+  color: var(--logo-color);
+}
+
+.hero-subheadline {
+  font-family: "font-heading";
+  line-height: 1.3;
+  color: var(--text-color-second);
+}
+
+.btn {
+  text-decoration: none;
+  background-color: var(--text-color-prime);
+  color: var(--color-accent);
+  border-radius: .5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.btn:hover {
+  background-color: hsl(359, 100%, 50%);
+  transform: translateY(-2px);
+}
+
 /* header styling and non-utility alignment and spacing */
 
 header  {
@@ -698,9 +743,13 @@ header nav ul {
   padding: 0; 
 }
 
+.default-link {
+  color: blue;
+}
+
 a {
   text-decoration: none;
-  color: var(--color-accent);
+  color: white; /*var(--color-accent); conflict issue effecting the color, its a bg-color light grey it needs to be white */
   font-weight: 500;  
 }
 
@@ -737,6 +786,10 @@ header nav ul li a:hover {
   background-color: var(--logo-color);
   color: var(--bg-color-prime);
 }
+
+main.container {
+  padding-bottom: 3rem;
+} 
 
 /* footer styles for elements within this section and non-utility alignment and non-utility spacing  */
 
